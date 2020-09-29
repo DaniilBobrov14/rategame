@@ -21,27 +21,32 @@
               </div>
           </div>
           <div class="card">
-              <img h src="https://images-na.ssl-images-amazon.com/images/I/71nlEoSrewL._AC_SL1200_.jpg" class="rounded-top card-img-top" alt="">
+              <img :src="api['image_background']" class="rounded-top card-img-top" alt="">
               <div class="card-body">
                   <h5 class="card-tittle text-center">Card Title</h5>
                   <p class="card-text">Date release</p>
+                  <p class="card-text"></p>
               </div>
           </div>
       </div>
 </div>
+
 </div>
 </template>
 <script>
-import axios from 'axios'
 export default {
-    data () {
+    data (context) {
         return {
             name : '',
-            games : null
+            games : null,
+            api : [],
+            img : []
+
         }
     },
-    mounted() {
-        axios.get('https://api-v3.igdb.com/games/').then()  
+    async mounted() {
+        const response = await fetch ('https://api.rawg.io/api/developers?search=Electronic%20Arts&page_size=1').then(res => res.json());
+        this.api = response.results[0]
     }
 
     
