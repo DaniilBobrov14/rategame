@@ -26,6 +26,11 @@
                           <div class="card-platforms">
                               <div v-for="platforms in game['platforms']" class="platform">
                                   <span v-if="platforms['platform']['name'] === 'Xbox One'" class="xbox-one-platform"></span>
+                                  <span v-if="platforms['platform']['name'] === 'Xbox 360'" class="xbox-360-platform"></span>
+                                  <span v-if="platforms['platform']['name'] === 'PlayStation 5'" class="ps-5-platform"></span>
+                                  <span v-if="platforms['platform']['name'] === 'PlayStation 4'" class="ps-4-platform"></span>
+                                  <span v-if="platforms['platform']['name'] === 'PlayStation 3'" class="ps-3-platform"></span>
+                                  <span v-if="platforms['platform']['name'] === 'PC'" class="pc-platform"></span>
                               </div>
                           </div>
                       </div>
@@ -42,38 +47,44 @@
     .pc-platform {
         width: 30px;
         height: 30px;
-        background-image: url("../../assets/img/");
+        background-image: url("../../assets/img/pc.png");
         background-size: cover;
+        display: block;
     }
     .ps-3-platform {
         width: 30px;
         height: 30px;
-        background-image: url("../../assets/img/");
+        background-image: url("../../assets/img/ps3.png");
         background-size: cover;
+        display: block;
     }
     .ps-4-platform {
         width: 30px;
         height: 30px;
-        background-image: url("../../assets/img/");
+        background-image: url("../../assets/img/ps4.png");
         background-size: cover;
+        display: block;
     }
     .ps-5-platform {
         width: 30px;
         height: 30px;
-        background-image: url("../../assets/img/");
+        background-image: url("#");
         background-size: cover;
+        display: block;
     }
     .xbox-360-platform {
         width: 30px;
         height: 30px;
-        background-image: url("../../assets/img/");
+        background-image: url("../../assets/img/xbox-360.png");
         background-size: cover;
+        display: block;
     }
     .xbox-one-platform {
         width: 30px;
         height: 30px;
         background-image: url("../../assets/img/xbox-logo.png");
         background-size: cover;
+        display: block;
     }
 </style>
 <script>
