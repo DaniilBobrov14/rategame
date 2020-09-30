@@ -13,15 +13,6 @@
   <hr>
   
   <div class="row">
-      <!--<div class="col-lg-6">-->
-          <!--&lt;!&ndash;<div class="card">&ndash;&gt;-->
-          <!--&lt;!&ndash;<img src="https://images-na.ssl-images-amazon.com/images/I/71nlEoSrewL._AC_SL1200_.jpg" class="rounded-top card-img-top" alt="">&ndash;&gt;-->
-          <!--&lt;!&ndash;<div class="card-body">&ndash;&gt;-->
-          <!--&lt;!&ndash;<h5 class="card-tittle text-center">Card Title</h5>&ndash;&gt;-->
-          <!--&lt;!&ndash;<p class="card-text">Date release</p>&ndash;&gt;-->
-          <!--&lt;!&ndash;</div>&ndash;&gt;-->
-          <!--&lt;!&ndash;</div>&ndash;&gt;-->
-      <!--</div>-->
       <div v-for="game in filteredGames" class="col-lg-6">
           <div class="card">
               <img :src="game['background_image']" class="rounded card-img-top" alt="">
