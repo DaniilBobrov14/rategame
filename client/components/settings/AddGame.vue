@@ -38,17 +38,15 @@
 </template>
 <script>
 export default {
-    data (context) {
+    data () {
         return {
             api : [],
             search : ''
         }
     },
     async mounted() {
-        console.log('https://api.rawg.io/api/games');
         const response = await fetch ('https://api.rawg.io/api/games').then(res => res.json());
         this.api = response.results;
-        console.log(this.api);
     },
     computed : {
         filteredGames : function () {
