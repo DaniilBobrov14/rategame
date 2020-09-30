@@ -24,9 +24,9 @@
                       </div>
                       <div class="col-7">
                           <div class="card-platforms">
-                              <p v-for="platforms in game['platforms']" class="pc-platform">
-                                  {{platforms['platform']['name']}}
-                              </p>
+                              <div v-for="platforms in game['platforms']" class="platform">
+                                  <span v-if="platforms['platform']['name'] === 'Xbox One'" class="xbox-one-platform"></span>
+                              </div>
                           </div>
                       </div>
                   </div>
@@ -38,6 +38,44 @@
 
 </div>
 </template>
+<style scoped>
+    .pc-platform {
+        width: 30px;
+        height: 30px;
+        background-image: url("../../assets/img/");
+        background-size: cover;
+    }
+    .ps-3-platform {
+        width: 30px;
+        height: 30px;
+        background-image: url("../../assets/img/");
+        background-size: cover;
+    }
+    .ps-4-platform {
+        width: 30px;
+        height: 30px;
+        background-image: url("../../assets/img/");
+        background-size: cover;
+    }
+    .ps-5-platform {
+        width: 30px;
+        height: 30px;
+        background-image: url("../../assets/img/");
+        background-size: cover;
+    }
+    .xbox-360-platform {
+        width: 30px;
+        height: 30px;
+        background-image: url("../../assets/img/");
+        background-size: cover;
+    }
+    .xbox-one-platform {
+        width: 30px;
+        height: 30px;
+        background-image: url("../../assets/img/xbox-logo.png");
+        background-size: cover;
+    }
+</style>
 <script>
 export default {
     data (context) {
