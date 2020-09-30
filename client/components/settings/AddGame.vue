@@ -22,7 +22,7 @@
           <!--&lt;!&ndash;</div>&ndash;&gt;-->
           <!--&lt;!&ndash;</div>&ndash;&gt;-->
       <!--</div>-->
-      <div v-for="game in api" class="col-lg-6">
+      <div v-for="game in filteredGames" class="col-lg-6">
           <div class="card">
               <img :src="game['background_image']" class="rounded card-img-top" alt="">
               <div class="card-body">
@@ -53,7 +53,7 @@ export default {
     computed : {
         filteredGames : function () {
             return this.api.filter((game) => {
-                return boolean ;
+                return game.name.match(this.search) ;
             })
         }
     }
