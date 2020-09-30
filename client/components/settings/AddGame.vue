@@ -18,7 +18,18 @@
               <img :src="game['background_image']" class="rounded card-img-top" alt="">
               <div class="card-body">
                   <h5 class="card-tittle text-center">{{game.name}}</h5>
-                  <p class="card-text">{{game.released}}</p>
+                  <div class="row">
+                      <div class="col-5">
+                          <p class="card-text">{{game.released}}</p>
+                      </div>
+                      <div class="col-7">
+                          <div class="card-platforms">
+                              <p v-for="platforms in game['platforms']" class="pc-platform">
+                                  {{platforms['platform']['name']}}
+                              </p>
+                          </div>
+                      </div>
+                  </div>
               </div>
           </div>
       </div>
@@ -29,20 +40,22 @@
 </template>
 <script>
 export default {
-    data () {
+    data (context) {
         return {
             api : [],
-            search : ''
+            apiAllGames : [],
+            search : '',
         }
     },
     async mounted() {
         const response = await fetch ('https://api.rawg.io/api/games').then(res => res.json());
         this.api = response.results;
+        this.apiAllGames = response ;
     },
     computed : {
         filteredGames : function () {
             return this.api.filter((game) => {
-                return game.name.match(this.search) ;
+                return game.name.toLowerCase().match(this.search);
             })
         }
     }
